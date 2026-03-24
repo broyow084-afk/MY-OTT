@@ -15,7 +15,7 @@
     <h2>Popular</h2>
     <div class="slider">
         <div class="poster" onclick="showSection('seasons')">
-            <img src="invincible.jpg" alt="">
+            <img src="invincible.jpg">
             <span>Invincible</span>
         </div>
     </div>
@@ -27,9 +27,21 @@
     <h2>Seasons</h2>
     <div class="slider">
         <div class="poster" onclick="showSection('season1')">
-            <img src="season1.jpg" alt="">
+            <img src="season1.jpg">
             <span>Season 1</span>
         </div>
+        <div class="poster" onclick="showSection('season2')">
+            <img src="season2.jpg">
+            <span>Season 2</span>
+        </div>
+    </div>
+</div>
+
+<!-- VIDEO PLAYER -->
+<div id="playerSection" class="section hidden">
+    <button class="back" onclick="closePlayer()">⬅ Back</button>
+    <div class="video-container">
+        <iframe id="videoFrame" allowfullscreen></iframe>
     </div>
 </div>
 
@@ -37,38 +49,49 @@
 <div id="season1" class="section hidden">
     <button class="back" onclick="showSection('seasons')">⬅ Back</button>
     <h2>Season 1</h2>
-
-    <!-- VIDEO PLAYER -->
-    <div id="player" class="video-container hidden">
-        <iframe id="videoFrame" frameborder="0" allowfullscreen></iframe>
-    </div>
-
-    <!-- EPISODES -->
     <div class="slider">
-        <div class="episode" onclick="playVideo('id1mdHJvqC8')">Episode 1</div>
-        <div class="episode" onclick="playVideo('ynKh_AUYF9U')">Episode 2</div>
-        <div class="episode" onclick="playVideo('-za29-REDWQ')">Episode 3</div>
-        <div class="episode" onclick="playVideo('-5PP-zjUKqw')">Episode 4</div>
-        <div class="episode" onclick="playVideo('mC-0RKiMu-o')">Episode 5</div>
-        <div class="episode" onclick="playVideo('s7DTOwdJGiA')">Episode 6</div>
-        <div class="episode" onclick="playVideo('JBNcZUk6XAw')">Episode 7</div>
-        <div class="episode" onclick="playVideo('JxIn385kdSo')">Episode 8</div>
+        <div class="episode" onclick="playVideo('https://drive.google.com/file/d/1hH7gaZYN0tenvIyneHELOxfK2jPFl41c/preview')">E01</div>
+        <div class="episode" onclick="playVideo('https://drive.google.com/file/d/1nI0oYqQdqRo1HR-wZ4_opHGZgsweJGVr/preview')">E02</div>
+        <div class="episode" onclick="playVideo('https://drive.google.com/file/d/1xpeewO8mEtehnPLHmarFnpYx6D0-XkHD/preview')">E03</div>
+        <div class="episode" onclick="playVideo('https://drive.google.com/file/d/1_FhBXqTAm6X_jAXM1WM0eCJ6CjLxSztb/preview')">E04</div>
+        <div class="episode" onclick="playVideo('https://drive.google.com/file/d/1pjPI7Id5Yv0dIsG-dAwClO1fHUU2r17o/preview')">E05</div>
+        <div class="episode" onclick="playVideo('https://drive.google.com/file/d/1fNBfj6yK0Fpwat3FACfS-o9AK6QFItu9/preview')">E06</div>
+        <div class="episode" onclick="playVideo('https://drive.google.com/file/d/1mxun6EEKtAwuR5rZBGv8HSAS3z5eVjfv/preview')">E07</div>
+        <div class="episode" onclick="playVideo('https://drive.google.com/file/d/1mRjYqO9pTkFC478FjvZygis7xrjJ1orF/preview')">E08</div>
+    </div>
+</div>
+
+<!-- SEASON 2 -->
+<div id="season2" class="section hidden">
+    <button class="back" onclick="showSection('seasons')">⬅ Back</button>
+    <h2>Season 2</h2>
+    <div class="slider">
+        <div class="episode" onclick="playVideo('https://drive.google.com/file/d/107Y7daV6E_mGZHO3inN6OTxEQrq14oEx/preview')">E01</div>
+        <div class="episode" onclick="playVideo('https://drive.google.com/file/d/13kiYhxmXNZz1I6RnZUW5C-xHftvk4MIX/preview')">E02</div>
+        <div class="episode" onclick="playVideo('https://drive.google.com/file/d/152JJVxCZxjNUwyjAmmNUU_O6ARuNK-i8/preview')">E03</div>
+        <div class="episode" onclick="playVideo('https://drive.google.com/file/d/18tqk_so6AopLsBI9jWUDs9HjAbc_k2Ah/preview')">E04</div>
+        <div class="episode" onclick="playVideo('https://drive.google.com/file/d/1pOsF-dvLagGIjRaKNMnh3g-Mei3XY9f0/preview')">E05</div>
+        <div class="episode" onclick="playVideo('https://drive.google.com/file/d/1E-pDsbpHgxgTKK6wo9j0ne1-QElXWHu9/preview')">E06</div>
     </div>
 </div>
 
 <script>
 function showSection(id){
-    document.querySelectorAll('.section').forEach(sec=>{
-        sec.classList.add('hidden');
-    });
-    document.getElementById(id).classList.remove('hidden');
+    document.querySelectorAll(".section")
+    .forEach(s => s.classList.add("hidden"));
+    document.getElementById(id).classList.remove("hidden");
 }
 
-function playVideo(id){
-    const player = document.getElementById("player");
-    const frame = document.getElementById("videoFrame");
-    frame.src = "https://www.youtube.com/embed/" + id + "?autoplay=1";
-    player.classList.remove("hidden");
+function playVideo(url){
+    document.querySelectorAll(".section")
+    .forEach(s => s.classList.add("hidden"));
+    document.getElementById("playerSection").classList.remove("hidden");
+    document.getElementById("videoFrame").src = url;
+}
+
+function closePlayer(){
+    document.getElementById("videoFrame").src = "";
+    showSection('seasons');
 }
 </script>
 
