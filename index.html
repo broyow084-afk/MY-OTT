@@ -45,43 +45,26 @@
 <div id="season1" class="section hidden">
     <button class="back" onclick="showSection('seasons')">⬅ Back</button>
     <h2>Season 1</h2>
+
+    <!-- VIDEO PLAYER -->
+    <div id="player" class="video-container hidden">
+        <iframe id="videoFrame" frameborder="0" allowfullscreen></iframe>
+    </div>
+
+    <!-- EPISODES -->
     <div class="slider">
 
-        <div class="episode">
-            <iframe src="https://www.youtube.com/embed/id1mdHJvqC8" frameborder="0" allowfullscreen></iframe>
-        </div>
-
-        <div class="episode">
-            <iframe src="https://www.youtube.com/embed/ynKh_AUYF9U" frameborder="0" allowfullscreen></iframe>
-        </div>
-
-        <div class="episode">
-            <iframe src="https://www.youtube.com/embed/-za29-REDWQ" frameborder="0" allowfullscreen></iframe>
-        </div>
-
-        <div class="episode">
-            <iframe src="https://www.youtube.com/embed/-5PP-zjUKqw" frameborder="0" allowfullscreen></iframe>
-        </div>
-
-        <div class="episode">
-            <iframe src="https://www.youtube.com/embed/mC-0RKiMu-o" frameborder="0" allowfullscreen></iframe>
-        </div>
-
-        <div class="episode">
-            <iframe src="https://www.youtube.com/embed/s7DTOwdJGiA" frameborder="0" allowfullscreen></iframe>
-        </div>
-
-        <div class="episode">
-            <iframe src="https://www.youtube.com/embed/JBNcZUk6XAw" frameborder="0" allowfullscreen></iframe>
-        </div>
-
-        <div class="episode">
-            <iframe src="https://www.youtube.com/embed/JxIn385kdSo" frameborder="0" allowfullscreen></iframe>
-        </div>
+        <div class="episode" onclick="playVideo('id1mdHJvqC8')">E01</div>
+        <div class="episode" onclick="playVideo('ynKh_AUYF9U')">E02</div>
+        <div class="episode" onclick="playVideo('-za29-REDWQ')">E03</div>
+        <div class="episode" onclick="playVideo('-5PP-zjUKqw')">E04</div>
+        <div class="episode" onclick="playVideo('mC-0RKiMu-o')">E05</div>
+        <div class="episode" onclick="playVideo('s7DTOwdJGiA')">E06</div>
+        <div class="episode" onclick="playVideo('JBNcZUk6XAw')">E07</div>
+        <div class="episode" onclick="playVideo('JxIn385kdSo')">E08</div>
 
     </div>
 </div>
-
 <!-- SEASON 2 -->
 <div id="season2" class="section hidden">
     <button class="back" onclick="showSection('seasons')">⬅ Back</button>
@@ -115,12 +98,13 @@
 </div>
 
 <script>
-function showSection(id){
-    const sections = document.querySelectorAll(".section");
-    sections.forEach(section => section.classList.add("hidden"));
-    document.getElementById(id).classList.remove("hidden");
+function playVideo(id){
+    const player = document.getElementById("player");
+    const frame = document.getElementById("videoFrame");
+
+    frame.src = "https://www.youtube.com/embed/" + id;
+    player.classList.remove("hidden");
 }
 </script>
-
 </body>
 </html>
