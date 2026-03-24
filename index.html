@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MY OTT</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h1 class="logo">MY OTT</h1>
+
+<!-- SHOWS -->
+<div id="shows" class="section">
+    <h2>Popular</h2>
+    <div class="slider">
+        <div class="poster" onclick="showSection('seasons')">
+            <img src="invincible.jpg">
+            <span>Invincible</span>
+        </div>
+    </div>
+</div>
+
+<!-- SEASONS -->
+<div id="seasons" class="section hidden">
+    <button class="back" onclick="showSection('shows')">⬅ Back</button>
+    <h2>Seasons</h2>
+    <div class="slider">
+        <div class="poster" onclick="showSection('season1')">
+            <img src="season1.jpg">
+            <span>Season 1</span>
+        </div>
+        <div class="poster" onclick="showSection('season2')">
+            <img src="season2.jpg">
+            <span>Season 2</span>
+        </div>
+        <div class="poster" onclick="showSection('season3')">
+            <img src="season3.jpg">
+            <span>Season 3</span>
+        </div>
+    </div>
+</div>
+
+<!-- SEASON 1 -->
+<div id="season1" class="section hidden">
+    <button class="back" onclick="showSection('seasons')">⬅ Back</button>
+    <h2>Season 1</h2>
+    <div class="slider">
+        <div class="episode"><a href="Invincible_S01E01.mp4">E01</a></div>
+        <div class="episode"><a href="Invincible_S01E02.mp4">E02</a></div>
+        <div class="episode"><a href="Invincible_S01E03.mp4">E03</a></div>
+        <div class="episode"><a href="Invincible_S01E04.mp4">E04</a></div>
+        <div class="episode"><a href="Invincible_S01E05.mp4">E05</a></div>
+        <div class="episode"><a href="Invincible_S01E06.mp4">E06</a></div>
+        <div class="episode"><a href="Invincible_S01E07.mp4">E07</a></div>
+        <div class="episode"><a href="Invincible_S01E08.mp4">E08</a></div>
+    </div>
+</div>
+
+<!-- SEASON 2 -->
+<div id="season2" class="section hidden">
+    <button class="back" onclick="showSection('seasons')">⬅ Back</button>
+    <h2>Season 2</h2>
+    <div class="slider">
+        <div class="episode"><a href="Invincible_S02E01.mp4">E01</a></div>
+        <div class="episode"><a href="Invincible_S02E02.mp4">E02</a></div>
+        <div class="episode"><a href="Invincible_S02E03.mp4">E03</a></div>
+        <div class="episode"><a href="Invincible_S02E04.mp4">E04</a></div>
+        <div class="episode"><a href="Invincible_S02E05.mp4">E05</a></div>
+        <div class="episode"><a href="Invincible_S02E06.mp4">E06</a></div>
+        <div class="episode"><a href="Invincible_S02E07.mp4">E07</a></div>
+        <div class="episode"><a href="Invincible_S02E08.mp4">E08</a></div>
+    </div>
+</div>
+
+<!-- SEASON 3 -->
+<div id="season3" class="section hidden">
+    <button class="back" onclick="showSection('seasons')">⬅ Back</button>
+    <h2>Season 3</h2>
+    <div class="slider">
+        <div class="episode"><a href="Invincible_S03E01.mp4">E01</a></div>
+        <div class="episode"><a href="Invincible_S03E02.mp4">E02</a></div>
+        <div class="episode"><a href="Invincible_S03E03.mp4">E03</a></div>
+        <div class="episode"><a href="Invincible_S03E04.mp4">E04</a></div>
+        <div class="episode"><a href="Invincible_S03E05.mp4">E05</a></div>
+        <div class="episode"><a href="Invincible_S03E06.mp4">E06</a></div>
+        <div class="episode"><a href="Invincible_S03E07.mp4">E07</a></div>
+        <div class="episode"><a href="Invincible_S03E08.mp4">E08</a></div>
+    </div>
+</div>
+
+<script>
+function showSection(id){
+    const sections = document.querySelectorAll(".section");
+    sections.forEach(section => section.classList.add("hidden"));
+    document.getElementById(id).classList.remove("hidden");
+}
+</script>
+
+</body>
+</html>
