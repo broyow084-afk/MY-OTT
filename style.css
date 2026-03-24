@@ -1,0 +1,107 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+body{
+    background:#141414;
+    color:white;
+    padding:20px;
+}
+
+.logo{
+    color:#e50914;
+    margin-bottom:20px;
+}
+
+.section{
+    margin-bottom:30px;
+}
+
+h2{
+    margin-bottom:15px;
+}
+
+/* SLIDER */
+.slider{
+    display:flex;
+    gap:15px;
+    overflow-x:auto;
+    scroll-snap-type:x mandatory;
+    -webkit-overflow-scrolling:touch;
+}
+
+.slider::-webkit-scrollbar{
+    display:none;
+}
+
+/* POSTER */
+.poster{
+    min-width:150px;
+    cursor:pointer;
+    transition:0.3s;
+    scroll-snap-align:start;
+}
+
+.poster img{
+    width:100%;
+    border-radius:8px;
+}
+
+.poster span{
+    display:block;
+    margin-top:8px;
+    text-align:center;
+}
+
+.poster:hover{
+    transform:scale(1.08);
+}
+
+/* EPISODES */
+.episode{
+    min-width:100px;
+    background:#222;
+    padding:20px;
+    text-align:center;
+    border-radius:8px;
+    scroll-snap-align:start;
+    transition:0.3s;
+}
+
+.episode a{
+    color:white;
+    text-decoration:none;
+}
+
+.episode:hover{
+    background:#e50914;
+}
+
+/* BACK BUTTON */
+.back{
+    background:#e50914;
+    border:none;
+    padding:8px 15px;
+    color:white;
+    border-radius:5px;
+    margin-bottom:15px;
+    cursor:pointer;
+}
+
+.back:hover{
+    background:#b20710;
+}
+
+.hidden{
+    display:none;
+}
+
+/* RESPONSIVE */
+@media(max-width:600px){
+    .poster{
+        min-width:120px;
+    }
+}
